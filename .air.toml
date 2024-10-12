@@ -1,0 +1,16 @@
+root = "."      # The root directory of the project
+tmp_dir = "tmp" # The temporary directory where air will store its temporary files
+
+[build]
+bin = "main.exe" # The binary file should have .exe extension on Windows
+cmd = "go build -o tmp/main.exe ." # Command to build the project. Output to the tmp folder
+exclude = [
+  "tmp/*",
+  "client/*",
+] # Directories to be excluded from monitoring for changes
+include = ["**/*.go"] # File patterns to be included for monitoring changes
+ignore = ["tmp/*"] # Files or directories to be ignored when triggering a build
+
+[log]
+color = true # Show colored logs
+time = true  # Show timestamps in logs
